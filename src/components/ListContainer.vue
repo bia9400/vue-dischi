@@ -1,6 +1,6 @@
 <template>
     <div class="row row-cols-5 mygap">
-        <AlbumCard v-for="disco in listaDischi" :key="disco.poster" :axiosObject="disco"></AlbumCard>
+        <AlbumCard v-for="disco in listaDischi" :key="disco.poster" :axiosObject="disco" ></AlbumCard>
     </div>
 </template>
 

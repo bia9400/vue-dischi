@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <header>
-      <div class="logo-container">
+    <header class="d-flex justify-content-between">
+      <div class="logo-container ">
         <img src="../public/logo-small.svg" alt="" />
       </div>
+      
+     <SelectGenre @search="filterAlbum()"></SelectGenre>
     </header>
     <main>
       <div class="container py-4">
@@ -14,11 +16,18 @@
 </template>
 
 <script>
-import ListContainer from './components/ListContainer.vue';
-
+import ListContainer from "./components/ListContainer.vue";
+import SelectGenre from './components/SelectGenre.vue'
 export default {
   name: "App",
-  components: { ListContainer },
+  components: { ListContainer,
+  SelectGenre },
+  
+    methods: {
+        filterAlbum(){
+            console.log("ciao");
+        }
+    }
 };
 </script>
 
@@ -36,7 +45,7 @@ export default {
 }
 body {
   height: 100vh;
-   background-color: #1e2d3b;
+  background-color: #1e2d3b;
 }
 .logo-container {
   height: 50px;
@@ -46,6 +55,4 @@ header {
   padding: 1rem 0.5rem;
   background-color: #2e3a46;
 }
-
-
 </style>
