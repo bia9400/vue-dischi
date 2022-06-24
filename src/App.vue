@@ -5,7 +5,7 @@
         <img src="../public/logo-small.svg" alt="" />
       </div>
       
-     <SelectGenre @search="filterAlbum"></SelectGenre>
+    
     </header>
     <main>
       <div class="container py-4">
@@ -17,16 +17,14 @@
 
 <script>
 import ListContainer from "./components/ListContainer.vue";
-import SelectGenre from './components/SelectGenre.vue'
+
 export default {
   name: "App",
   components: { ListContainer,
-  SelectGenre },
+   },
   
     methods: {
-        filterAlbum(ddd){
-            console.log(ddd);
-        }
+        
     }
 };
 </script>
