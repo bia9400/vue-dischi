@@ -2,7 +2,7 @@
     <div>
         <select class="form-select" v-model="choosenGenre" aria-label="Default select example">
           <option selected>Choose your Genre</option>
-          <option v-for="genre in selectValues" :key="genre"  onchange="$emit(`search`)">{{genre}}</option>
+          <option v-for="genre in selectValues" :key="genre"  onchange="$emit(`search`,choosenGenre)">{{genre}}</option>
           
         </select>
       

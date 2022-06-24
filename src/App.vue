@@ -5,7 +5,7 @@
         <img src="../public/logo-small.svg" alt="" />
       </div>
       
-     <SelectGenre @search="filterAlbum()"></SelectGenre>
+     <SelectGenre @search="filterAlbum"></SelectGenre>
     </header>
     <main>
       <div class="container py-4">
@@ -24,8 +24,8 @@ export default {
   SelectGenre },
   
     methods: {
-        filterAlbum(){
-            console.log("ciao");
+        filterAlbum(ddd){
+            console.log(ddd);
         }
     }
 };
