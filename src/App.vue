@@ -6,15 +6,19 @@
       </div>
     </header>
     <main>
-      <div class="container"></div>
+      <div class="container">
+        <ListContainer></ListContainer>
+      </div>
     </main>
   </div>
 </template>
 
 <script>
+import ListContainer from './components/ListContainer.vue';
+
 export default {
   name: "App",
-  components: {},
+  components: { ListContainer },
 };
 </script>
 
