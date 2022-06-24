@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <AlbumCard></AlbumCard>
+    <div class="row row-cols-5 mygap">
+        <AlbumCard v-for="disco in listaDischi" :key="disco.poster" :axiosObject="disco"></AlbumCard>
     </div>
 </template>
 
@@ -27,5 +27,7 @@ export default {
 </script>
 
 <style lang="scss">
-    
+    .mygap{
+        row-gap: 2rem;
+    }
 </style>
