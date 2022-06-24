@@ -1,8 +1,8 @@
 <template>
     <div>
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select" v-model="choosenGenre" aria-label="Default select example">
           <option selected>Choose your Genre</option>
-          <option v-for="genre in selectValues" :key="genre" :value="genre" onchange="$emit(`search`)">{{genre}}</option>
+          <option v-for="genre in selectValues" :key="genre"  onchange="$emit(`search`)">{{genre}}</option>
           
         </select>
       
