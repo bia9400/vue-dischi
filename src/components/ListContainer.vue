@@ -10,8 +10,11 @@
         </div>
       
     
-    <div class="row row-cols-5 mygap">
-        <AlbumCard v-for="disco in listaDischi" :key="disco.poster" :axiosObject="disco" ></AlbumCard>
+    <div v-if="printedArray.length<=0" class="row row-cols-5 mygap">
+        <AlbumCard  v-for="disco in listaDischi" :key="disco.poster" :axiosObject="disco" ></AlbumCard>
+    </div>
+    <div v-else class="row row-cols-5 mygap">
+        <AlbumCard  v-for="disco in printedArray" :key="disco.poster" :axiosObject="disco" ></AlbumCard>
     </div>
     </div>
 </template>
@@ -28,7 +31,7 @@ export default {
             listaDischi:[],
             selectValues:["Rock","Pop","Jazz","Metal"],
             choosenGenre:"",
-            pritedArray:[]
+            printedArray:[]
         }
     },
     mounted() {
@@ -41,13 +44,14 @@ export default {
     },
     methods: {
         filterArray(choosenGenre){
-           for(let i=0;i<this.listaDischi.length;i++){
-            if(this.listaDischi[i].genre!=choosenGenre){
-                this.listaDischi.splice(i,1)
-            }
-           }
+            this.printedArray=[]
             console.log(choosenGenre);
-            console.log(this.listaDischi);
+           this.listaDischi.forEach((value)=>{
+            if(choosenGenre==value.genre){
+                this.printedArray.push(value)
+            }
+           })
+           console.log(this.printedArray);
         }
     },
 }
